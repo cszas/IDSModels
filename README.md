@@ -1,1 +1,15 @@
-# Design of an adaptable real-time Machine Learning Intrusion Detection System based on attacks categorization
+# Adaptable Real-Time Machine Learning Intrusion Detection System based on attacks categorization
+
+Aim
+
+## Requirements
+
+TensorFlow
+Keras
+Kafka
+
+## Execution
+
+### Train
+
+

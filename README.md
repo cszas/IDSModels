@@ -79,13 +79,13 @@ To run this feature, the scripts used will be `data_stream.py` and `real_time_cl
 
 This unit is in charge of receiving the rows sended from `data_stream.py`, and send them to `real_time_classifier.py`.
 
-**Terminal 1:** 
+*Terminal 1:* 
 ```
 > cd kafka/kafka_2.12_2.3.0
 > bin/zookeeper-server-start.sh config/zookeeper.properties 
 ```
 
-**Terminal 2:**
+*Terminal 2:*
 ```
 > cd kafka/kafka_2.12_2.3.0
 > > bin/kafka-server-start.sh config/server.properties
@@ -95,7 +95,7 @@ This unit is in charge of receiving the rows sended from `data_stream.py`, and s
 
 This script will wait the data to be streamed.
 
-**Terminal 3:**
+*Terminal 3:*
 ```
 > python3 real_time_classifier.py
 ```
@@ -103,7 +103,7 @@ This script will wait the data to be streamed.
 
 Run:
 
-**Terminal 4:**
+*Terminal 4:*
 ```
 > python3 data_stream.py
 ```

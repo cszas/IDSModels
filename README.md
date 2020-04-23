@@ -88,7 +88,7 @@ This unit is in charge of receiving the rows sended from `data_stream.py`, and s
 *Terminal 2:*
 ```
 > cd kafka/kafka_2.12_2.3.0
-> > bin/kafka-server-start.sh config/server.properties
+> bin/kafka-server-start.sh config/server.properties
 ```
 
 #### Classifier

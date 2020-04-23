@@ -73,6 +73,8 @@ The trained models obtained are located here, with .pkl or .h5 extension.
 ### Real-time Classifier
 
 To run this feature, the scripts used will be `data_stream.py` and `real_time_classifier.py`, and the Kafka Broker.
+
+
 #### Kafka Broker
 
 This unit is in charge of receiving the rows sended from `data_stream.py`, and send them to `real_time_classifier.py`.
@@ -83,7 +85,7 @@ This unit is in charge of receiving the rows sended from `data_stream.py`, and s
 > bin/zookeeper-server-start.sh config/zookeeper.properties 
 ```
 
-**Terminal 2: **
+**Terminal 2:**
 ```
 > cd kafka/kafka_2.12_2.3.0
 > > bin/kafka-server-start.sh config/server.properties
@@ -93,7 +95,7 @@ This unit is in charge of receiving the rows sended from `data_stream.py`, and s
 
 This script will wait the data to be streamed.
 
-**Terminal 3: **
+**Terminal 3:**
 ```
 > python3 real_time_classifier.py
 ```
@@ -101,10 +103,24 @@ This script will wait the data to be streamed.
 
 Run:
 
-**Terminal 4: **
+**Terminal 4:**
 ```
 > python3 data_stream.py
 ```
+### Results
+
+As a result, the `real_time_classifier.py` script will show the attack type predicted, compared to the real value.
+For this purpose,the label assigned to each attack is:
+0 :  Analysis
+1 :  Backdoor
+2 :  DoS
+3 :  Exploits
+4 :  Fuzzers
+5 :  Generic
+6 :  Normal
+7 :  Reconnaissance
+8 :  Shellcode
+9 :  Worms
 
 ### Train
 This phase is not necessary to achieve the complete functionality of this project, as the trained models are already included.

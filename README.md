@@ -51,10 +51,6 @@ Here, all the graphs generated from the pre-processing and training phases are i
 
 The trained models obtained are located here, with .pkl or .h5 extension.
 
-### Kafka
-
-[Kafka](https://kafka.apache.org/downloads) scripts to raise the Broker. Version 2.12-2.3.0 is used.
-
 ### Main
 
 - **pre-process.py**: Python script to deal training data.
@@ -77,17 +73,19 @@ To run this feature, the scripts used will be `data_stream.py` and `real_time_cl
 
 #### Kafka Broker
 
+
+[Kafka](https://kafka.apache.org/downloads) scripts to raise the Broker. Version 2.12-2.3.0 is used.
 This unit is in charge of receiving the rows sended from `data_stream.py`, and send them to `real_time_classifier.py`.
 
 *Terminal 1:* 
 ```
-> cd kafka/kafka_2.12_2.3.0
+> cd kafka_2.12_2.3.0
 > bin/zookeeper-server-start.sh config/zookeeper.properties 
 ```
 
 *Terminal 2:*
 ```
-> cd kafka/kafka_2.12_2.3.0
+> cd kafka_2.12_2.3.0
 > bin/kafka-server-start.sh config/server.properties
 ```
 

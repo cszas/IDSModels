@@ -40,7 +40,7 @@ conda create -y --name tensorflow python=3.6
 On this folder, there is included the original UNSW-NB15 data-set used, and those generated from the process:
 
 - **UNSW_NB15_training-set.csv**: Original [training set](https://www.unsw.adfa.edu.au/unsw-canberra-cyber/cybersecurity/ADFA-NB15-Datasets/a%20part%20of%20training%20and%20testing%20set/UNSW_NB15_training-set.csv).
-- **UNSW_NB15_testing-set.csv**: Original [testing set] (https://www.unsw.adfa.edu.au/unsw-canberra-cyber/cybersecurity/ADFA-NB15-Datasets/a%20part%20of%20training%20and%20testing%20set/UNSW_NB15_testing-set.csv).
+- **UNSW_NB15_testing-set.csv**: Original [testing set](https://www.unsw.adfa.edu.au/unsw-canberra-cyber/cybersecurity/ADFA-NB15-Datasets/a%20part%20of%20training%20and%20testing%20set/UNSW_NB15_testing-set.csv).
 
 In executing `pre-process.py`, the files obtained are:
 

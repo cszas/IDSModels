@@ -15,7 +15,7 @@ The main objective of the project is to develop an adaptable system based on att
 
 - TensorFlow
 - Keras
-- Kafka and Zookeeper
+- [Kafka](https://kafka.apache.org/downloads) 
 - Conda3
 - Pandas
 - Sklearn
@@ -35,11 +35,19 @@ conda create -y --name tensorflow python=3.6
 
 ### Data
 
+
+
 On this folder, there is included the original UNSW-NB15 data-set used, and those generated from the process:
-- **UNSW_NB15_training-set.csv**: Original training set.
-- **UNSW_NB15_testing-set.csv**: Original testing set.
-- **UNSW_corr.csv**: Complete pre-processed training set, with all the features.
+
+- **UNSW_NB15_training-set.csv**: Original [training set](https://www.unsw.adfa.edu.au/unsw-canberra-cyber/cybersecurity/ADFA-NB15-Datasets/a%20part%20of%20training%20and%20testing%20set/UNSW_NB15_training-set.csv).
+- **UNSW_NB15_testing-set.csv**: Original [testing set] (https://www.unsw.adfa.edu.au/unsw-canberra-cyber/cybersecurity/ADFA-NB15-Datasets/a%20part%20of%20training%20and%20testing%20set/UNSW_NB15_testing-set.csv).
+
+In executing `pre-process.py`, the files obtained are:
+
+- **UNSW_corr.csv**: Complete pre-processed training set, with all the features. Obt
 - **UNSW_uncorr.csv**: Pre-processed training set, without correlated features.
+
+Also, while streaming data, the Python file `data_stream.py` will generate the following:
 - **test_x.csv**: Randomly mixed features from testing set.
 - **test_y.csv**: Attack categorization column from testing set.
 
@@ -66,6 +74,19 @@ The trained models obtained are located here, with .pkl or .h5 extension.
 
 ## Execution
 
+### Model Training
+During this phase, the files from the saved_model folder are created. To assure the correct operation of the whole project, it is recommended to run them.
+
+```
+> python3 knn.py
+> python3 svm.py
+> python3 dt.py
+> python3 rf.py
+> python3 xgb.py
+> python3 MLP.py
+> python3 LSTM.py
+```
+
 ### Real-time Classifier
 
 To run this feature, the scripts used will be `data_stream.py` and `real_time_classifier.py`, and the Kafka Broker.
@@ -73,8 +94,7 @@ To run this feature, the scripts used will be `data_stream.py` and `real_time_cl
 
 #### Kafka Broker
 
-
-[Kafka](https://kafka.apache.org/downloads) scripts to raise the Broker. Version 2.12-2.3.0 is used.
+Kafka scripts to raise the Broker. Version 2.12-2.3.0 is used.
 This unit is in charge of receiving the rows sended from `data_stream.py`, and send them to `real_time_classifier.py`.
 
 *Terminal 1:* 
@@ -119,18 +139,4 @@ For this purpose,the label assigned to each attack is:
 7 :  Reconnaissance
 8 :  Shellcode
 9 :  Worms
-
-### Train
-This phase is not necessary to achieve the complete functionality of this project, as the trained models are already included.
-However, it is possible to see the individual results of each algorithm by running:
-
-```
-> python3 knn.py
-> python3 svm.py
-> python3 dt.py
-> python3 rf.py
-> python3 xgb.py
-> python3 MLP.py
-> python3 LSTM.py
-```
 

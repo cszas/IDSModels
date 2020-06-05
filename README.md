@@ -15,10 +15,10 @@ The main objective of the project is to develop an adaptable system based on att
 
 - TensorFlow
 - Keras
+- Scikit-learn
 - [Kafka](https://kafka.apache.org/downloads) 
 - Conda3
-- Pandas
-- Scikit-learn
+- Pandas, numpy, matplotlib, seaborn
 
 ## Installation
 

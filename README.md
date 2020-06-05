@@ -18,7 +18,7 @@ The main objective of the project is to develop an adaptable system based on att
 - [Kafka](https://kafka.apache.org/downloads) 
 - Conda3
 - Pandas
-- Sklearn
+- Scikit-learn
 
 ## Installation
 

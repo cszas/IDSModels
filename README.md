@@ -18,7 +18,7 @@ The main objective of the project is to develop an adaptable system based on att
 - Scikit-learn
 - [Kafka](https://kafka.apache.org/downloads) 
 - Conda3
-- Pandas, numpy, matplotlib, seaborn
+- Pandas, numpy, matplotlib, seaborn, joblib
 
 ## Installation
 

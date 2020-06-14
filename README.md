@@ -33,23 +33,23 @@ conda create -y --name tensorflow python=3.6
  ```
 ## Repository Structure
 
+The repository is structured in two folders with the same organization, for balanced and original data-sets. Inside them, there are different folders for data, generated images (img) and trained models (saved_model), and the python classes created for this project.
+
 ### Data
 
-
-
-On this folder, there are included the original UNSW-NB15 data-set used, and those generated from the process:
+On this folder, there must be included the original UNSW-NB15 data-set used, and those generated from the process:
 
 - **UNSW_NB15_training-set.csv**: Original [training set](https://www.unsw.adfa.edu.au/unsw-canberra-cyber/cybersecurity/ADFA-NB15-Datasets/a%20part%20of%20training%20and%20testing%20set/UNSW_NB15_training-set.csv).
 - **UNSW_NB15_testing-set.csv**: Original [testing set](https://www.unsw.adfa.edu.au/unsw-canberra-cyber/cybersecurity/ADFA-NB15-Datasets/a%20part%20of%20training%20and%20testing%20set/UNSW_NB15_testing-set.csv).
 
-In executing `pre-process.py`, the files obtained are:
+Executing `pre-process.py`, the files obtained are:
 
-- **UNSW_corr.csv**: Complete pre-processed training set, with all the features. Obt
-- **UNSW_uncorr.csv**: Pre-processed training set, without correlated features.
-
-Also, while streaming data, the Python file `data_stream.py` will generate the following:
-- **test_x.csv**: Randomly mixed features from testing set.
-- **test_y.csv**: Attack categorization column from testing set.
+- **x_train_corr.csv**: Complete pre-processed training set, with all the features.
+- **x_train_uncorr.csv**: Complete pre-processed training set, without the correlated features.
+- **x_test_corr.csv**: Complete pre-processed testing set, with all the features.
+- **x_test_uncorr.csv**: Complete pre-processed testing set, without the correlated features.
+- **y_train.csv**: Attack category column from training set.
+- **y_test.csv**: Attack category column from testing set.
 
 ### Img
 
@@ -66,13 +66,20 @@ The trained models obtained are located here, with .pkl or .h5 extension.
 - **real_time_classifier.py**: Python script to receive real-time data and evaluate it with all the models trained, choosing one.
 - **knn.py**: Python script to develop and train KNN model.
 - **svm.py**: Python script to develop and train SVM model.
-- **dt.py**: Python script to develop and train Decision Tree Classifier model.
-- **rf.py**: Python script to develop and train Random Forest Classifier model.
-- **xgb.py**: Python script to develop and train XGBoost model.
-- **MLP.py**: Python script to develop and train MLP model.
-- **LSTM.py**: Python script to develop and train LSTM model.
+- **decision_tree.py**: Python script to develop and train Decision Tree Classifier model.
+- **random_forest.py**: Python script to develop and train Random Forest Classifier model.
+- **xgboost.py**: Python script to develop and train XGBoost model.
+- **mlp.py**: Python script to develop and train MLP model.
+- **lstm.py**: Python script to develop and train LSTM model.
+- **global_classifier.py**: Python script to develop voter method for dynamic classifier.
+- **ensemble.py**: Python script to develop ensemble method for dynamic classifier.
+
 
 ## Execution
+
+### Data Pre-Process
+
+Having in 'data' folder the training and testing data-sets, when executing `> pyhton3.6 pre-process.py`, all the transformations over data occur.
 
 ### Model Training
 During this phase, the files from the saved_model folder are created. To assure the correct operation of the whole project, it is recommended to run them.
@@ -80,11 +87,19 @@ During this phase, the files from the saved_model folder are created. To assure 
 ```
 > python3 knn.py
 > python3 svm.py
-> python3 dt.py
-> python3 rf.py
-> python3 xgb.py
-> python3 MLP.py
-> python3 LSTM.py
+> python3 decision_tree.py
+> python3 random_forest.py
+> python3 xgboost.py
+> python3 mlp.py
+> python3 lstm.py
+```
+
+Also, there are two classes to verify the overall performance of the dynamic classifier:
+
+```
+> python 3.6 global\_classifier.py
+
+> python 3.6 ensemble.py
 ```
 
 ### Real-time Classifier

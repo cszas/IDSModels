@@ -85,21 +85,21 @@ Having in 'data' folder the training and testing data-sets, when executing `> py
 During this phase, the files from the saved_model folder are created. To assure the correct operation of the whole project, it is recommended to run them.
 
 ```
-> python3 knn.py
-> python3 svm.py
-> python3 decision_tree.py
-> python3 random_forest.py
-> python3 xgboost.py
-> python3 mlp.py
-> python3 lstm.py
+> python3.6 knn.py
+> python3.6 svm.py
+> python3.6 decision_tree.py
+> python3.6 random_forest.py
+> python3.6 xgboost.py
+> python3.6 mlp.py
+> python3.6 lstm.py
 ```
 
 Also, there are two classes to verify the overall performance of the dynamic classifier:
 
 ```
-> python 3.6 global_classifier.py
+> python3.6 global_classifier.py
 
-> python 3.6 ensemble.py
+> python3.6 ensemble.py
 ```
 
 ### Real-time Classifier
@@ -130,7 +130,7 @@ This script will wait the data to be streamed.
 
 *Terminal 3:*
 ```
-> python3 real_time_classifier.py
+> python3.6 real_time_classifier.py
 ```
 #### Data Stream
 
@@ -138,7 +138,7 @@ Run:
 
 *Terminal 4:*
 ```
-> python3 data_stream.py
+> python3.6 data_stream.py
 ```
 ### Results
 

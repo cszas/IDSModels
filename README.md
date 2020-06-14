@@ -97,7 +97,7 @@ During this phase, the files from the saved_model folder are created. To assure 
 Also, there are two classes to verify the overall performance of the dynamic classifier:
 
 ```
-> python 3.6 global\_classifier.py
+> python 3.6 global_classifier.py
 
 > python 3.6 ensemble.py
 ```
